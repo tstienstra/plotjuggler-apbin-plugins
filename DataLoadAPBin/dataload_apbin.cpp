@@ -579,11 +579,11 @@ bool DataLoadAPBIN::readDataFromFile(FileLoadInfo* info, PlotDataMapRef& plot_da
         
         if ( !has_instance[msg_id] )
         {
-          series_name = "/" + msg_name + "/" + field_name;
+          series_name = msg_name + "/" + field_name;
         }
         else
         {
-          series_name = "/" + msg_name + "/" + instance_name + "/" + field_name;
+          series_name = msg_name + "/" + instance_name + "/" + field_name;
         }
 
         #ifdef LABEL_WITH_UNIT

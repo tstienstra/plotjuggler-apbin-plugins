@@ -31,7 +31,7 @@ ARG ADD_UNITS=OFF
 COPY --link . /apbin_plugin
 WORKDIR /apbin_plugin/build
 # Ensure a fresh build folder
-RUN rm -R * \
+RUN rm -rf ./* || true \
     && cmake -Dplotjuggler_DIR="/plotjuggler_ws/install/lib/cmake/plotjuggler" -DADD_UNITS=${ADD_UNITS} .. \
     && make \
     && make install \
